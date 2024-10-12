@@ -19,6 +19,7 @@ const StyledAppBar = styled(AppBar)`
   position: fixed !important;
   top: 0;
   z-index: 5 !important;
+  padding: 0 50px !important;
   box-shadow: ${({ isScrolled }) =>
     isScrolled ? "0 4px 8px rgba(0, 0, 0, 0.1)" : "none"} !important;
   transition: background-color 0.3s, box-shadow 0.3s !important;
@@ -90,12 +91,12 @@ function Header() {
           <Box
             component="img"
             src={
-              isScrolled ? "/images/logo-dark.png" : "/images/logo-light.png"
+              isScrolled ? "/images/logo-blue.png" : "/images/logo-white.png"
             }
             alt="Logo"
             href="/#"
             sx={{
-              height: 70,
+              height: 50,
               display: { xs: "flex", md: "flex" },
               mr: 1,
               cursor: "pointer",
