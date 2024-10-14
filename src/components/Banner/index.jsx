@@ -27,10 +27,18 @@ const BannerTextStyled = styled.div`
     align-items: center;
     width: 100%;
     margin-top: 10px;
+    cursor: pointer;
+    &:hover img{
+      transform: translateX(20px);
+    }
     img {
       width: 6vw;
       padding-left: 40px;
       cursor: pointer;
+      transition: transform 0.3s ease;
+      &:hover{
+        transform: translateX(20px);
+      }
     }
   }
 `;
