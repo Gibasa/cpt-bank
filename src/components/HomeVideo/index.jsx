@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const VideoContainer = styled.div`
+const HomeVideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,11 +10,11 @@ const VideoContainer = styled.div`
   padding: 80px 0;
 `;
 
-const VideoStyled = styled.video`
+const HomeVideoStyled = styled.video`
   width: 50%;
 `;
 
-const ButtonVideoStyled = styled.button`
+const HomeButtonVideoStyled = styled.button`
   margin-top: 50px;
   background-color: ${({ theme }) => theme.colors.primary};
   border: 2px solid ${({ theme }) => theme.colors.white};
@@ -29,20 +29,20 @@ const ButtonVideoStyled = styled.button`
   }
 `;
 
-function Video() {
+function HomeVideo() {
   return (
-    <VideoContainer>
-      <VideoStyled
+    <HomeVideoContainer>
+      <HomeVideoStyled
         muted
         autoPlay
         loop
         poster="./images/3P.2023.12 - FOTO HOME.png"
       >
         <source src="./images/banner-video.mp4" type="video/mp4" />
-      </VideoStyled>
-      <ButtonVideoStyled>Conheça nosso Banco</ButtonVideoStyled>
-    </VideoContainer>
+      </HomeVideoStyled>
+      <HomeButtonVideoStyled>Conheça nosso Banco</HomeButtonVideoStyled>
+    </HomeVideoContainer>
   );
 }
 
-export default Video;
+export default HomeVideo;

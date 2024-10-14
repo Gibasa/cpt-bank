@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const BannerStyled = styled.div`
+const HomeBannerStyled = styled.div`
   background-image: url(/images/banner.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,19 +10,20 @@ const BannerStyled = styled.div`
   align-items: center;
 `;
 
-const BannerTextStyled = styled.div`
+const HomeBannerTextStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin: 8vw 0 0 5vw;
   h1 {
     color: ${({ theme }) => theme.colors.primary};
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size:3.5vw;
+    font-size:3vw;
     width: 60%;
   }
   h3 {
     color: ${({ theme }) => theme.colors.primary};
     font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 1.2vw;
     display: flex;
     align-items: center;
     width: 100%;
@@ -43,17 +44,17 @@ const BannerTextStyled = styled.div`
   }
 `;
 
-function Banner() {
+function HomeBanner() {
   return (
-    <BannerStyled>
-      <BannerTextStyled>
+    <HomeBannerStyled>
+      <HomeBannerTextStyled>
         <h1>A evolução do crédito</h1>
         <h3>
           Saiba mais <img src="/images/seta.png" alt="" />
         </h3>
-      </BannerTextStyled>
-    </BannerStyled>
+      </HomeBannerTextStyled>
+    </HomeBannerStyled>
   );
 }
 
-export default Banner;
+export default HomeBanner;

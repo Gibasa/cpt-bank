@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import Video from "@/components/Video";
-import Banner from "@/components/Banner";
-import Parceiros from "@/components/Parceiros";
+import HomeVideo from "@/components/HomeVideo";
+import HomeBanner from "@/components/HomeBanner";
+import HomeParceiros from "@/components/HomeParceiros";
+import HomeSolucoes from "@/components/HomeSolucoes";
 
 const HomeStyled = styled.section`
   margin-top: 120px;
@@ -11,9 +12,10 @@ const HomeStyled = styled.section`
 function Home() {
   return (
     <HomeStyled>
-      <Video />
-      <Banner/>
-      <Parceiros/>
+      <HomeVideo />
+      <HomeBanner/>
+      <HomeParceiros/>
+      <HomeSolucoes/>
     </HomeStyled>
   );
 }
