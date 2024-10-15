@@ -6,13 +6,11 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"), // Aliás para 'src'
-      "@fortawesome/free-brands-svg-icons": "@fortawesome/free-brands-svg-icons/index.es.js",
     },
   },
   base: "",
