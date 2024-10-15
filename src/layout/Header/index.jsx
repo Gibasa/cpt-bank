@@ -41,7 +41,8 @@ const StyledButton = styled(Button)`
     bottom: -2px;
     width: 0%;
     height: 3px;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme, isScrolled }) =>
+      isScrolled ? theme.colors.primary : theme.colors.white};
     transition: width 0.3s ease;
     transform: translateX(-50%);
   }
