@@ -38,7 +38,7 @@ function HomeVideo() {
         loop
         poster="./images/3P.2023.12 - FOTO HOME.png"
       >
-        <source src="./images/banner-video.mp4" type="video/mp4" />
+        <source src="./images/video-intro.mp4" type="video/mp4" />
       </HomeVideoStyled>
       <HomeButtonVideoStyled>Conheça nosso Banco</HomeButtonVideoStyled>
     </HomeVideoContainer>
