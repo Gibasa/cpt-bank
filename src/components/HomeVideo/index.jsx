@@ -7,7 +7,7 @@ const HomeVideoContainer = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  padding: 0px 0;
+  margin-top: -100px;
 `;
 
 const HomeVideoStyled = styled.video`
@@ -22,6 +22,7 @@ const HomeButtonVideoStyled = styled.button`
   padding: 10px 40px;
   font-size: 1.8vw;
   transition: background-color 0.3s, color 0.3s;
+  margin: 80px 0;
   cursor: pointer;
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};

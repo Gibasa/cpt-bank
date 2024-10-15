@@ -18,7 +18,8 @@ const HomeBannerTextStyled = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size:3vw;
-    width: 60%;
+    width: 100%;
+    
   }
   h3 {
     color: ${({ theme }) => theme.colors.primary};
@@ -48,7 +49,7 @@ function HomeBanner() {
   return (
     <HomeBannerStyled>
       <HomeBannerTextStyled>
-        <h1>A evolução do crédito</h1>
+        <h1>Soluções de crédito <br/>inteligentes.</h1>
         <h3>
           Saiba mais <img src="/images/seta.png" alt="" />
         </h3>

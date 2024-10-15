@@ -25,6 +25,7 @@ const HomeSolucoesStyled = styled.div`
       align-items: center;
       font-size: 1.2vw;
       cursor: pointer;
+      font-weight: 600;
     }
     &:hover img{
       transform: translateX(20px);
@@ -34,6 +35,8 @@ const HomeSolucoesStyled = styled.div`
       padding-left: 40px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      align-self: center;
+      justify-self: center;
       &:hover{
         transform: translateX(20px);
       }
@@ -48,7 +51,7 @@ function HomeSolucoes() {
   return (
     <HomeSolucoesStyled>
       <div className="homeSolucoesText">
-        <h2>Temos soluções financeiras sob medida para você</h2>
+        <h2>Soluções financeiras sob medida para você</h2>
         <p>Saiba mais <img src="/images/seta.png" alt="" /></p>
       </div>
       <img src="/images/solucoes-img.png" alt="Mulher no computador" />

@@ -15,20 +15,21 @@ const FooterStyled = styled.div`
   width: 100%;
   display: flex;
   padding: 0 5vw;
-  align-items: center;
-  gap: 100px;
+  align-items: flex-end;
+  gap: 90px;
 `;
 
 const FooterLogoStyled = styled.img`
-  width: 35vw;
+  width: 23vw;
   margin: auto;
 `;
 
 const FooterTextStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
-
+  gap: 30px;
+  margin: 20px 0;
+  width: 50%;
   .footerSocial {
     display: flex;
     flex-direction: column;
@@ -36,7 +37,6 @@ const FooterTextStyled = styled.div`
     .footerSocialIcons{
       display: flex;
       gap:50px;
-      margin-left: 5vw;
       .footerIcon{
         color: ${({ theme }) => theme.colors.white};
         font-size: 2vw;
@@ -64,7 +64,7 @@ function Footer() {
       ></FooterLogoStyled>
       <FooterTextStyled>
         <div className="footerSocial">
-          <h3>SIGA A COPARTNERS NAS REDES</h3>
+          <h3>Siga a Copartners nas redes</h3>
           <div className="footerSocialIcons">
           <FontAwesomeIcon icon={faFacebook} className="footerIcon" />
           <FontAwesomeIcon icon={faInstagram} className="footerIcon" />
@@ -73,7 +73,7 @@ function Footer() {
           
         </div>
         <div className="footerContact">
-          <h3>FALE COM A GENTE</h3>
+          <h3>Fale com a gente</h3>
           <p>contato@copartnersbank.com.br</p>
         </div>
         <div className="footerAdress">

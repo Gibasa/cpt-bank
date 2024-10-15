@@ -18,7 +18,7 @@ const HomeParceirosEsquerda = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary};
     color: ${({ theme }) => theme.colors.white};
     margin: 0 0 0 5vw;
-    width: 50%;
+    width: 60%;
   }
   h2 {
     font-size: 3vw;
@@ -45,7 +45,7 @@ function HomeParceiros() {
   return (
     <HomeParceirosStyled>
       <HomeParceirosEsquerda>
-        <h2>Conheça nosso parceiros:</h2>
+        <h2>Conheça nossos parceiros:</h2>
         <p>
           Conectamos você às melhores soluções de crédito, através de parcerias
           estratégicas com as principais instituições financeiras do mercado.
