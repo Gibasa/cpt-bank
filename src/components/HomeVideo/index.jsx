@@ -7,11 +7,11 @@ const HomeVideoContainer = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  padding: 80px 0;
+  padding: 0px 0;
 `;
 
 const HomeVideoStyled = styled.video`
-  width: 50%;
+  width: 100%;
 `;
 
 const HomeButtonVideoStyled = styled.button`
