@@ -45,7 +45,7 @@ function QSQuemSomos() {
           dos clientes.
         </p>
       </div>
-      <img src="/images/banner.png" alt="" />
+      <img src="/images/quem-somos-img.jpg" alt="" />
     </QSQuemSomosStyled>
   );
 }

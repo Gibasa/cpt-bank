@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Video from "@/components/Video";
 import HomeBanner from "@/components/HomeBanner";
-import HomeParceiros from "@/components/HomeParceiros";
 import HomeSolucoes from "@/components/HomeSolucoes";
 
 const HomeStyled = styled.section`
@@ -12,9 +11,8 @@ const HomeStyled = styled.section`
 function Home() {
   return (
     <HomeStyled>
-      <Video video="video-intro.mp4"/>
+      <Video video="video-intro-2.mp4" buttonText="Conheça nossa fintech"/>
       <HomeBanner/>
-      <HomeParceiros/>
       <HomeSolucoes/>
     </HomeStyled>
   );

@@ -24,30 +24,27 @@ const ButtonVideoStyled = styled.button`
   font-size: 1.8vw;
   transition: background-color 0.3s, color 0.3s;
   margin: 80px 0;
-  cursor: pointer;
+  cursor: pointer !important;
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
-function Video({video}) {
+function Video({ video, buttonText }) {
   return (
     <VideoContainer>
-      <VideoStyled
-        muted
-        autoPlay
-        loop
-      >
+      <VideoStyled muted autoPlay loop>
         <source src={`./images/${video}`} type="video/mp4" />
       </VideoStyled>
-      <ButtonVideoStyled>Conheça nosso Banco</ButtonVideoStyled>
+      {buttonText && <ButtonVideoStyled>{buttonText}</ButtonVideoStyled>}
     </VideoContainer>
   );
 }
 
 Video.propTypes = {
   video: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
 };
 
 export default Video;

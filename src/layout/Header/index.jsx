@@ -38,6 +38,7 @@ const StyledButton = styled(Button)`
   text-transform: none !important;
   font-size: 20px !important;
   position: relative;
+  cursor: pointer !important;
 
   &::after {
     content: "";
@@ -105,7 +106,7 @@ function Header() {
               height: 50,
               display: { xs: "flex", md: "flex" },
               mr: 1,
-              cursor: "pointer",
+              cursor: "pointer" ,
             }}
           />
 

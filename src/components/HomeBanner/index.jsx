@@ -49,8 +49,8 @@ function HomeBanner() {
   return (
     <HomeBannerStyled>
       <HomeBannerTextStyled>
-        <h1>Soluções de crédito <br/>inteligentes.</h1>
-        <h3>
+        <h1>Crédito inteligente <br/>pensado para você.</h1>
+        <h3 onClick={() => (window.location.href = "/#/servicos")}>
           Saiba mais <img src="/images/seta.png" alt="" />
         </h3>
       </HomeBannerTextStyled>

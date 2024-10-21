@@ -3,14 +3,16 @@ import Video from "@/components/Video";
 import QSQuemSomos from "@/components/QSQuemsomos";
 import QSEconomize from "@/components/QSEconomize";
 
-const QuemSomosStyled = styled.div``;
+const QuemSomosStyled = styled.div`
+  margin-top: 80px;
+`;
 
 function QuemSomos() {
   return (
     <QuemSomosStyled>
-      <Video />
+      <Video video="quem-somos.mp4" buttonText="Confira nossos serviços" />
       <QSQuemSomos />
-      <QSEconomize/>
+      <QSEconomize />
     </QuemSomosStyled>
   );
 }

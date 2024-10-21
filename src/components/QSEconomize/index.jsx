@@ -15,7 +15,7 @@ const QSEconomizeStyled = styled.div`
     margin-left: 5vw;
   }
   .banner {
-    width: 50%;
+    width: 35%;
     background-color: ${({ theme }) => theme.colors.primary};
     border-radius: 0 40px 40px 0;
     margin: 20px 0;
@@ -25,7 +25,7 @@ const QSEconomizeStyled = styled.div`
       padding: 10px 40px 10px 5vw;
       font-family: ${({ theme }) => theme.fonts.primary};
       color: ${({ theme }) => theme.colors.white};
-      width: 60%;
+      width: 80%;
     }
   }
 
@@ -49,7 +49,7 @@ function QSEconomize() {
   return (
     <QSEconomizeStyled>
       <h2>
-        Economize <br /> até 80%
+        Economize até 80%
       </h2>
 
       <div className="banner">
