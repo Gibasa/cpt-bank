@@ -9,9 +9,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const pages = ["Quem somos", "Serviços", "Contato e Carreiras"];
+const pages = [
+  { title: "Quem somos", route: "quem-somos" },
+  { title: "Serviços", route: "servicos" },
+  { title: "Contato e Carreiras", route: "contato-e-carreira" },
+];
 
 const StyledAppBar = styled(AppBar)`
   background-color: ${({ theme, isScrolled }) =>
@@ -95,7 +100,7 @@ function Header() {
               isScrolled ? "/images/logo-blue.png" : "/images/logo-white.png"
             }
             alt="Logo"
-            href="/#"
+            onClick={() => (window.location.href = "/")}
             sx={{
               height: 50,
               display: { xs: "flex", md: "flex" },
@@ -107,15 +112,16 @@ function Header() {
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map(({ title, route }) => (
               <StyledButton
-                key={page}
-                href={`#${page}`}
+                key={title}
+                component={Link}
+                to={`/${route}`} //
                 onClick={handleCloseNavMenu}
                 isScrolled={isScrolled}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                {page}
+                {title}
               </StyledButton>
             ))}
           </Box>
@@ -148,8 +154,16 @@ function Header() {
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem
+                  key={page.title}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    window.location.href = `/${page.route}`;
+                  }}
+                >
+                  <Typography sx={{ textAlign: "center" }}>
+                    {page.title}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HomeVideo from "@/components/HomeVideo";
+import Video from "@/components/Video";
 import HomeBanner from "@/components/HomeBanner";
 import HomeParceiros from "@/components/HomeParceiros";
 import HomeSolucoes from "@/components/HomeSolucoes";
@@ -12,7 +12,7 @@ const HomeStyled = styled.section`
 function Home() {
   return (
     <HomeStyled>
-      <HomeVideo />
+      <Video video="video-intro.mp4"/>
       <HomeBanner/>
       <HomeParceiros/>
       <HomeSolucoes/>
