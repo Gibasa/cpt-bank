@@ -64,7 +64,7 @@ function Footer() {
       ></FooterLogoStyled>
       <FooterTextStyled>
         <div className="footerSocial">
-          <h3>Siga a Copartners nas redes</h3>
+          <h3>Siga o Copartners nas redes</h3>
           <div className="footerSocialIcons">
           <FontAwesomeIcon icon={faFacebook} className="footerIcon" />
           <FontAwesomeIcon icon={faInstagram} className="footerIcon" />

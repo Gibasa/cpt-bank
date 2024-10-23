@@ -96,6 +96,8 @@ const settings = {
   slidesToShow: 2,
   slidesToScroll: 1,
   arrows: true,
+  autoplay: true,
+  autoplaySpeed: 4000, 
   responsive: [
     {
       breakpoint: 768,
@@ -122,7 +124,7 @@ function Carousel() {
         </Box>
         <Box>
           <p>
-            Autmatização, via API, de pagamaentos e recebimentos bancários, com
+            Automatização, via API, de pagamaentos e recebimentos bancários, com
             conciliação de contas.
           </p>
         </Box>

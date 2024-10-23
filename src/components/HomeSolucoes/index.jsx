@@ -51,7 +51,7 @@ function HomeSolucoes() {
   return (
     <HomeSolucoesStyled>
       <div className="homeSolucoesText">
-        <h2>Soluções financeiras sob medida para você</h2>
+        <h2>Soluções financeiras sob medida para você.</h2>
         <p>Saiba mais <img src="/images/seta.png" alt="" /></p>
       </div>
       <img src="/images/solucoes-img.png" alt="Mulher no computador" />

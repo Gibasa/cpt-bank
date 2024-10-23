@@ -10,7 +10,13 @@ const QuemSomosStyled = styled.div`
 function QuemSomos() {
   return (
     <QuemSomosStyled>
-      <Video video="quem-somos.mp4" buttonText="Confira nossos serviços" />
+      <Video
+        video="quem-somos.mp4"
+        buttonText="Confira nossos serviços"
+        route="/servicos"
+        section="ServicosCaixas"
+        offsetTopNum="70"
+      />
       <QSQuemSomos />
       <QSEconomize />
     </QuemSomosStyled>

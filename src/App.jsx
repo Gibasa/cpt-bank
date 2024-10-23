@@ -8,12 +8,14 @@ import Servicos from "@/pages/Servicos";
 import QuemSomos from "@/pages/QuemSomos";
 import Contato from "@/pages/Contato";
 import GlobalStyle from "@/GlobalStyles";
+import ScrollToTop from "@/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyle/>
+        <ScrollToTop/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>

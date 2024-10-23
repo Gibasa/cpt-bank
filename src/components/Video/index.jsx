@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
+
 
 const VideoContainer = styled.div`
   display: flex;
@@ -31,13 +33,41 @@ const ButtonVideoStyled = styled.button`
   }
 `;
 
-function Video({ video, buttonText }) {
+function Video({ video, buttonText, route, section, offsetTopNum }) {
+  const navigate = useNavigate();
+
+  // Função para navegar e fazer o scroll com atraso
+  const scrollToSection = (sectionId, delay = 100) => {
+    return new Promise((resolve) => {
+      navigate(route);
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offsetPosition = section.offsetTop - offsetTopNum;
+          window.scrollTo({
+            top: offsetPosition >= 0 ? offsetPosition : 0,
+            behavior: "smooth",
+          });
+        }
+        resolve();
+      }, delay);
+    });
+  };
+
+  const handleClick = () => {
+    scrollToSection(section);
+  };
+
   return (
     <VideoContainer>
       <VideoStyled muted autoPlay loop>
         <source src={`./images/${video}`} type="video/mp4" />
       </VideoStyled>
-      {buttonText && <ButtonVideoStyled>{buttonText}</ButtonVideoStyled>}
+      {buttonText && (
+        <ButtonVideoStyled onClick={handleClick}>
+          {buttonText}
+        </ButtonVideoStyled>
+      )}
     </VideoContainer>
   );
 }
@@ -45,6 +75,9 @@ function Video({ video, buttonText }) {
 Video.propTypes = {
   video: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired,
+  section: PropTypes.string.isRequired,
+  offsetTopNum: PropTypes.number.isRequired,
 };
 
 export default Video;

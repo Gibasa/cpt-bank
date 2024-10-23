@@ -18,10 +18,11 @@ const QSEconomizeStyled = styled.div`
     width: 35%;
     background-color: ${({ theme }) => theme.colors.primary};
     border-radius: 0 40px 40px 0;
-    margin: 20px 0;
+    margin: 40px 0 20px 0;
     padding: 20px 0;
     p {
       font-size: 1.2vw;
+      line-height: 30px;
       padding: 10px 40px 10px 5vw;
       font-family: ${({ theme }) => theme.fonts.primary};
       color: ${({ theme }) => theme.colors.white};
@@ -29,7 +30,7 @@ const QSEconomizeStyled = styled.div`
     }
   }
 
-  button{
+  button {
     border: none;
     background-color: white;
     cursor: pointer;
@@ -38,7 +39,7 @@ const QSEconomizeStyled = styled.div`
     font-size: 1.2vw;
     color: ${({ theme }) => theme.colors.primary};
     margin: 20px 0 0 10vw;
-    &:hover{
+    &:hover {
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.white};
     }
@@ -49,15 +50,14 @@ function QSEconomize() {
   return (
     <QSEconomizeStyled>
       <h2>
-        Economize até 80%
+        Reduzir custos financeiros <br /> é nossa prioridade
       </h2>
 
       <div className="banner">
         <p>
-          Com o CopartnersBank, sua empresa pode reduzir em até 0,6% a.m. seus
-          gastos, alongar prazos e otimizar o fluxo de caixa.
+          Reduzimos em até 80% os custos financeiros das empresas, oferecendo
+          prazos mais longos e melhor gestão de dívidas.
         </p>{" "}
-        <p>Mais lucro, menos preocupações.</p>
       </div>
       <button>Saiba mais</button>
     </QSEconomizeStyled>

@@ -6,7 +6,7 @@ const QSQuemSomosStyled = styled.div`
   align-items: center;
   height: 80vh;
   width: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.secondary};
   gap: 50px;
   .text {
     font-family: ${({ theme }) => theme.fonts.primary};
@@ -15,11 +15,12 @@ const QSQuemSomosStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    h2{
+    h2 {
       font-size: 3vw;
     }
-    p{
+    p {
       font-size: 1.2vw;
+      line-height: 30px;
     }
   }
   img {
@@ -30,19 +31,14 @@ const QSQuemSomosStyled = styled.div`
 
 function QSQuemSomos() {
   return (
-    <QSQuemSomosStyled>
+    <QSQuemSomosStyled id="QSQuemSomos">
       <div className="text">
-        <h2>
-          Quem
-          <br />
-          Somos
-        </h2>{" "}
+        <h2>Quem Somos</h2>{" "}
         <p>
           Somos uma Fintech com equipe liderada por José Gomes da Costa, ex-CEO
           do Banco do Nordeste, economista e mestre em economia pela UFPE, MBA
           em finanças pela EPGE-FGV-RJ e especialização em “Banking” pela
-          EAESP-FGV-SP, com larga experiência no setor bancário, agora do lado
-          dos clientes.
+          EAESP-FGV-SP, com larga experiência no setor bancário.
         </p>
       </div>
       <img src="/images/quem-somos-img.jpg" alt="" />

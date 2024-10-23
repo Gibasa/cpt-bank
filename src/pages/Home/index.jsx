@@ -11,9 +11,15 @@ const HomeStyled = styled.section`
 function Home() {
   return (
     <HomeStyled>
-      <Video video="video-intro-2.mp4" buttonText="Conheça nossa fintech"/>
-      <HomeBanner/>
-      <HomeSolucoes/>
+      <Video
+        video="video-intro.mp4"
+        buttonText="Conheça nossa fintech"
+        route="/quem-somos"
+        section="QSQuemSomos"
+        offsetTopNum="50"
+      />
+      <HomeBanner />
+      <HomeSolucoes />
     </HomeStyled>
   );
 }

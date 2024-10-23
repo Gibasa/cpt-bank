@@ -9,10 +9,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const pages = [
+  { title: "Início", route: "" },
   { title: "Quem somos", route: "quem-somos" },
   { title: "Serviços", route: "servicos" },
   { title: "Contato e Carreiras", route: "contato-e-carreira" },
@@ -45,7 +46,7 @@ const StyledButton = styled(Button)`
     position: absolute;
     left: 50%;
     bottom: -2px;
-    width: 0%;
+    width: ${({ isActive }) => (isActive ? "90%" : "0%")};
     height: 3px;
     background-color: ${({ theme, isScrolled }) =>
       isScrolled ? theme.colors.primary : theme.colors.white};
@@ -56,6 +57,11 @@ const StyledButton = styled(Button)`
   &:hover::after {
     width: 90%;
   }
+`;
+
+const BoxStyled = styled(Box)`
+  display: flex;
+  gap: 30px;
 `;
 
 const StyledMenuIcon = styled(MenuIcon)`
@@ -70,6 +76,7 @@ const StyledToolbar = styled(Toolbar)`
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,23 +103,30 @@ function Header() {
       <Container maxWidth="xl">
         <StyledToolbar disableGutters>
           <Box
-            component="img"
-            src={
-              isScrolled ? "/images/logo-blue.png" : "/images/logo-white.png"
-            }
-            alt="Logo"
-            onClick={() => (window.location.href = "/")}
+            component={Link}
+            to="/"
             sx={{
               height: 50,
               display: { xs: "flex", md: "flex" },
               mr: 1,
-              cursor: "pointer" ,
+              cursor: "pointer",
             }}
-          />
+          >
+            <Box
+              component="img"
+              src={
+                isScrolled ? "/images/logo-blue.png" : "/images/logo-white.png"
+              }
+              alt="Logo"
+              sx={{
+                height: "100%",
+              }}
+            />
+          </Box>
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <BoxStyled sx={{ display: { xs: "none", md: "flex" } }}>
             {pages.map(({ title, route }) => (
               <StyledButton
                 key={title}
@@ -120,12 +134,13 @@ function Header() {
                 to={`/${route}`} //
                 onClick={handleCloseNavMenu}
                 isScrolled={isScrolled}
+                isActive={location.pathname === "/" && route === "" || location.pathname === `/${route}`}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
                 {title}
               </StyledButton>
             ))}
-          </Box>
+          </BoxStyled>
 
           <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
             <IconButton
