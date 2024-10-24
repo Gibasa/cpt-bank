@@ -22,9 +22,9 @@ const ServicosBannerStyled = styled.div`
     color: ${({ theme }) => theme.colors.primary};
     border: none;
     cursor: pointer;
-    width: 15vw;
-    height: 40px;
-    font-size: 1.2vw;
+    width: 25vw;
+    padding: 10px 40px;
+    font-size: 1.8vw;
     margin-bottom: 10vw;
     transition: background-color 0.3s, color 0.3s;
     &:hover {

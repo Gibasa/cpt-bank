@@ -10,6 +10,7 @@ const QSQuemSomosStyled = styled.div`
   gap: 50px;
   .text {
     font-family: ${({ theme }) => theme.fonts.primary};
+    color: ${({ theme }) => theme.colors.terciary};
     width: 40%;
     margin-left: 5vw;
     display: flex;

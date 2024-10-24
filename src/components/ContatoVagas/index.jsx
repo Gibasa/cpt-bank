@@ -24,16 +24,17 @@ const ContatoVagasStyled = styled.div`
       border: none;
       cursor: pointer;
       width: 15vw;
-      height: 40px;
-      font-size: 1.2vw;
+      font-size: 1.8vw;
+      padding: 10px 40px;
       margin-bottom: 10vw;
+      transition: background-color 0.3s, color 0.3s;
       &:hover {
         background-color: ${({ theme }) => theme.colors.secondary};
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.primary};
       }
     }
   }
-  img{
+  img {
     width: 35vw;
     margin: auto;
   }
@@ -45,7 +46,8 @@ function ContatoVagas() {
       <div className="text">
         <h2>
           Faça parte da <br />
-          nossa equipe de<br /> colaboradores
+          nossa equipe de
+          <br /> colaboradores
         </h2>
         <button>Ver vagas</button>
       </div>

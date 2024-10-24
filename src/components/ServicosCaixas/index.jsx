@@ -10,7 +10,7 @@ const ServicosCaixasStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px; /* Ajuste a distância entre o texto e as caixas */
+  gap: 50px; 
   background-color: ${({ theme }) => theme.colors.secondary};
 
   .text {
@@ -32,6 +32,23 @@ const ServicosCaixasStyled = styled.div`
 
     p {
       font-size: 1.2vw;
+    }
+  }
+  button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({ theme }) => theme.colors.white};
+    transition: background-color 0.3s, color 0.3s;
+    color: ${({ theme }) => theme.colors.primary};
+    padding: 10px 40px;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 `;
@@ -98,6 +115,7 @@ function ServicosCaixas() {
           </p>
         </Box>
       </GridContainer>
+      <button>Solicite seu atendimento personalizado</button>
     </ServicosCaixasStyled>
   );
 }

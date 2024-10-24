@@ -19,9 +19,9 @@ const VideoStyled = styled.video`
 
 const ButtonVideoStyled = styled.button`
   margin-top: 50px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  border: 2px solid ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
+  border: none;
   padding: 10px 40px;
   font-size: 1.8vw;
   transition: background-color 0.3s, color 0.3s;

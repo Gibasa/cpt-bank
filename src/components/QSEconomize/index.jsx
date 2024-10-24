@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const QSEconomizeStyled = styled.div`
   background-image: url("/images/economize-bg.gif");
@@ -9,7 +10,7 @@ const QSEconomizeStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   h2 {
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.terciary};
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 3vw;
     margin-left: 5vw;
@@ -35,9 +36,9 @@ const QSEconomizeStyled = styled.div`
     border: none;
     background-color: white;
     cursor: pointer;
-    width: 10vw;
-    height: 2.5vw;
-    font-size: 1.2vw;
+    width: 15vw;
+    font-size: 1.8vw;
+    padding: 10px 40px;
     background-color: ${({ theme }) => theme.colors.secondary};
     transition: background-color 0.3s, color 0.3s;
     color: ${({ theme }) => theme.colors.primary};
@@ -50,6 +51,28 @@ const QSEconomizeStyled = styled.div`
 `;
 
 function QSEconomize() {
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId, delay = 100) => {
+    return new Promise((resolve) => {
+      navigate("/servicos");
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offsetPosition = section.offsetTop - 100;
+          window.scrollTo({
+            top: offsetPosition >= 0 ? offsetPosition : 0,
+            behavior: "smooth",
+          });
+        }
+        resolve();
+      }, delay);
+    });
+  };
+
+  const handleClick = () => {
+    scrollToSection("ServicosCaixas");
+  };
   return (
     <QSEconomizeStyled>
       <h2>
@@ -58,11 +81,11 @@ function QSEconomize() {
 
       <div className="banner">
         <p>
-          Reduzimos em até 80% os custos financeiros das empresas, oferecendo
-          as melhores taxas de juros e os prazos mais adequados.
+          Reduzimos em até 80% os custos financeiros das empresas, oferecendo as
+          melhores taxas de juros e os prazos mais adequados.
         </p>{" "}
       </div>
-      <button>Saiba mais</button>
+      <button onClick={handleClick}>Saiba mais</button>
     </QSEconomizeStyled>
   );
 }
