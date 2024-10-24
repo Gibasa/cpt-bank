@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const QSEconomizeStyled = styled.div`
-  background-image: url("/images/economize-bg.jpg");
+  background-image: url("/images/economize-bg.gif");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -13,6 +13,7 @@ const QSEconomizeStyled = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 3vw;
     margin-left: 5vw;
+    margin-bottom: 80px;
   }
   .banner {
     width: 35%;
@@ -26,7 +27,7 @@ const QSEconomizeStyled = styled.div`
       padding: 10px 40px 10px 5vw;
       font-family: ${({ theme }) => theme.fonts.primary};
       color: ${({ theme }) => theme.colors.white};
-      width: 80%;
+      width: 85%;
     }
   }
 
@@ -37,6 +38,8 @@ const QSEconomizeStyled = styled.div`
     width: 10vw;
     height: 2.5vw;
     font-size: 1.2vw;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    transition: background-color 0.3s, color 0.3s;
     color: ${({ theme }) => theme.colors.primary};
     margin: 20px 0 0 10vw;
     &:hover {
@@ -56,7 +59,7 @@ function QSEconomize() {
       <div className="banner">
         <p>
           Reduzimos em até 80% os custos financeiros das empresas, oferecendo
-          prazos mais longos e melhor gestão de dívidas.
+          as melhores taxas de juros e os prazos mais adequados.
         </p>{" "}
       </div>
       <button>Saiba mais</button>

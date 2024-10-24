@@ -58,7 +58,7 @@ function ContatoMap() {
         <p>contato@copartnersbank.com.br</p>
         <p>
           {" "}
-          Ou fale diretamente <br /> com a gente clicando{" "}
+          Ou fale diretamente <br /> com a gente pelo WhastApp clicando{" "}
           <a href="https://wa.me/+557187676583" target="blank">
             aqui
           </a>

@@ -57,7 +57,6 @@ const Box = styled.div`
   text-align: center;
   border-radius: 15px;
   padding: 40px;
-
   p {
     margin: 0;
     line-height: 1.5;
@@ -76,19 +75,20 @@ function ServicosCaixas() {
       <GridContainer>
         <Box>
           <p>
-            Automatização, via API, de pagamentos e recebimentos bancários, com
-            conciliação de contas.
+            Financiamento de investimentos e capital de giro, com taxas abaixo
+            de CDI.
           </p>
         </Box>
         <Box>
           <p>
-            Crédito comercial e <br /> antecipação de recebíveis.
+            Antecipação de recebiveis com benefícios fiscais e custos
+            apropriados.
           </p>
         </Box>
         <Box>
           <p>
-            Financiamento de investimento e capital de giro, para empresas de
-            todos os portes.
+            Automatização de pagamentos e recebimentos por API, com liberação de
+            mão de obra.
           </p>
         </Box>
         <Box>

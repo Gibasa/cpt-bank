@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const ServicosBannerStyled = styled.div`
-  background-image: url("/images/servicos-banner.jpg");
+  background-image: url("/images/servicos-banner.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 123.4vh;
+  height: 126.6vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,7 @@ const ServicosBannerStyled = styled.div`
     height: 40px;
     font-size: 1.2vw;
     margin-bottom: 10vw;
+    transition: background-color 0.3s, color 0.3s;
     &:hover {
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.white};
@@ -37,7 +38,7 @@ function ServicosBanner() {
   return (
     <ServicosBannerStyled>
       <h2>
-        Mais que <br /> um banco, <br /> seu parceiro.
+        Mais que um banco, <br /> seu parceiro.
       </h2>
       <button>Solicite seu crédito</button>
     </ServicosBannerStyled>
