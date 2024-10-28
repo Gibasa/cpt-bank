@@ -9,6 +9,7 @@ import QuemSomos from "@/pages/QuemSomos";
 import Contato from "@/pages/Contato";
 import GlobalStyle from "@/GlobalStyles";
 import ScrollToTop from "@/ScrollToTop";
+import Formulario from "@/pages/Formulario";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/servicos" element={<Servicos />}></Route>
           <Route path="/quem-somos" element={<QuemSomos />}></Route>
           <Route path="/contato-e-carreira" element={<Contato />}></Route>
+          <Route path="/formulario" element={<Formulario />}></Route>
         </Routes>
         <Footer />
       </Router>
