@@ -53,26 +53,10 @@ const QSEconomizeStyled = styled.div`
 function QSEconomize() {
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId, delay = 100) => {
-    return new Promise((resolve) => {
-      navigate("/servicos");
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const offsetPosition = section.offsetTop - 100;
-          window.scrollTo({
-            top: offsetPosition >= 0 ? offsetPosition : 0,
-            behavior: "smooth",
-          });
-        }
-        resolve();
-      }, delay);
-    });
+  const handleButtonClick = () => {
+    navigate("/formulario");
   };
 
-  const handleClick = () => {
-    scrollToSection("ServicosCaixas");
-  };
   return (
     <QSEconomizeStyled>
       <h2>
@@ -85,7 +69,7 @@ function QSEconomize() {
           melhores taxas de juros e os prazos mais adequados.
         </p>{" "}
       </div>
-      <button onClick={handleClick}>Saiba mais</button>
+      <button onClick={handleButtonClick}>Saiba mais</button>
     </QSEconomizeStyled>
   );
 }

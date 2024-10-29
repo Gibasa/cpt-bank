@@ -50,31 +50,14 @@ const HomeBannerTextStyled = styled.div`
 function HomeBanner() {
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId, delay = 100) => {
-    return new Promise((resolve) => {
-      navigate("/servicos");
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const offsetPosition = section.offsetTop - 80;
-          window.scrollTo({
-            top: offsetPosition >= 0 ? offsetPosition : 0,
-            behavior: "smooth",
-          });
-        }
-        resolve();
-      }, delay);
-    });
-  };
-
-  const handleClick = () => {
-    scrollToSection("ServicosCaixas");
+  const handleButtonClick = () => {
+    navigate("/formulario");
   };
   return (
     <HomeBannerStyled>
       <HomeBannerTextStyled>
         <h1>Crédito inteligente <br/>pensado para você.</h1>
-        <h3 onClick={handleClick}>
+        <h3 onClick={handleButtonClick}>
           Saiba mais <img src="/images/seta.png" alt="" />
         </h3>
       </HomeBannerTextStyled>

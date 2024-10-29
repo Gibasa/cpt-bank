@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import Video from "@/components/Video";
 import HomeBanner from "@/components/HomeBanner";
-import HomeSolucoes from "@/components/HomeSolucoes";
+import ServicosCaixas from "@/components/ServicosCaixas";
+import ServicosBanner from "@/components/ServicosBanner";
+import QSQuemSomos from "@/components/QSQuemSomos";
+import QSEconomize from "@/components/QSEconomize";
+// import HomeSolucoes from "@/components/HomeSolucoes";
 
 const HomeStyled = styled.section`
   margin-top: 120px;
@@ -14,12 +18,16 @@ function Home() {
       <Video
         video="video-intro.mp4"
         buttonText="Conheça nossa fintech"
-        route="/quem-somos"
+        route="/"
         section="QSQuemSomos"
         offsetTopNum="50"
       />
       <HomeBanner />
-      <HomeSolucoes />
+      {/* <HomeSolucoes /> */}
+      <ServicosCaixas />
+      <ServicosBanner />
+      <QSQuemSomos />
+      <QSEconomize />
     </HomeStyled>
   );
 }

@@ -9,13 +9,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const pages = [
   { title: "Início", route: "" },
-  { title: "Quem somos", route: "quem-somos" },
-  { title: "Serviços", route: "servicos" },
+  { title: "Quem somos", route: "#QSQuemSomos" },
+  { title: "Serviços", route: "#ServicosCaixas" },
   { title: "Contato e Carreiras", route: "contato-e-carreira" },
 ];
 
@@ -77,6 +77,33 @@ function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId, delay = 100) => {
+    return new Promise((resolve) => {
+      if (location.pathname !== "/") {
+        navigate("/");
+      }
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offsetPosition = section.offsetTop - 90;
+          window.scrollTo({
+            top: offsetPosition >= 0 ? offsetPosition : 0,
+            behavior: "smooth",
+          });
+        }
+        resolve();
+      }, delay);
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,12 +125,17 @@ function Header() {
     setAnchorElNav(null);
   };
 
+  const handleTopClick = async () => {
+    navigate("/");
+    scrollToTop();
+  };
+
   return (
     <StyledAppBar position="static" isScrolled={isScrolled}>
       <Container maxWidth="xl">
         <StyledToolbar disableGutters>
           <Box
-            component={Link}
+            component="div"
             to="/"
             sx={{
               height: 50,
@@ -111,6 +143,7 @@ function Header() {
               mr: 1,
               cursor: "pointer",
             }}
+            onClick={handleTopClick}
           >
             <Box
               component="img"
@@ -130,11 +163,24 @@ function Header() {
             {pages.map(({ title, route }) => (
               <StyledButton
                 key={title}
-                component={Link}
-                to={`/${route}`} //
-                onClick={handleCloseNavMenu}
+                component={route.startsWith("#") ? "button" : Link}
+                to={!route.startsWith("#") ? route : undefined}
+                onClick={async () => {
+                  handleCloseNavMenu();
+                  if (route === "") {
+                    await handleTopClick(); // Use a nova função para o botão "Início"
+                  } else if (route.startsWith("#")) {
+                    await scrollToSection(route.replace("#", ""));
+                  } else {
+                    navigate(route);
+                  }
+                }}
                 isScrolled={isScrolled}
-                isActive={location.pathname === "/" && route === "" || location.pathname === `/${route}`}
+                isActive={
+                  (location.pathname === "/" && route === "") ||
+                  (location.pathname === `/${route}`) || // Adicione esta linha
+                  (location.pathname === "/contato-e-carreira" && route === "contato-e-carreira") // Verificação específica para a página de contato
+                }
                 sx={{ my: 2, color: "black", display: "block" }}
               >
                 {title}

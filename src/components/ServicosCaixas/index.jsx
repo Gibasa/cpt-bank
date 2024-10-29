@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServicosCaixasStyled = styled.div`
   width: 100%;
@@ -60,6 +61,7 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(2, 1fr); /* Duas colunas */
   gap: 50px; /* Ajuste o espaçamento entre as caixas */
   justify-items: center;
+  margin-top: 20px;
 `;
 
 const Box = styled.div`
@@ -149,6 +151,7 @@ const Modal = styled.div`
 function ServicosCaixas() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState("");
+  const navigate = useNavigate();
 
   const handleBoxClick = (content) => {
     setModalContent(content);
@@ -163,6 +166,10 @@ function ServicosCaixas() {
     if (event.target.id === "modalBackground") {
       closeModal();
     }
+  };
+
+  const handleButtonClick = () => {
+    navigate("/formulario");
   };
 
   return (
@@ -237,7 +244,22 @@ function ServicosCaixas() {
           </button>
         </Box>
       </GridContainer>
-      <button className="action-button">
+      <Box
+          onClick={() =>
+            handleBoxClick(
+              "Operações de alienação de imóveis para utilização dos recursos no capital de giro de empresas que não conseguem acesssr as linhas de capital de giro tradicionais, com taxas a partir de 1,1%a.m. E prazo de até 60 meses para pagar."
+            )
+          }
+        >
+          <p>
+          Operações de home equity, para capital de giro com vinculação de imóveis.
+          </p>
+          <button className="button-box">
+            Saiba mais
+            <div className="arrow">➔</div>
+          </button>
+        </Box>
+      <button className="action-button" onClick={handleButtonClick}>
         Solicite seu atendimento personalizado
       </button>
 

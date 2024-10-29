@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const ServicosBannerStyled = styled.div`
   background-image: url("/images/servicos-banner.gif");
@@ -35,12 +36,17 @@ const ServicosBannerStyled = styled.div`
 `;
 
 function ServicosBanner() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/formulario");
+  };
   return (
     <ServicosBannerStyled>
       <h2>
         Mais que um banco, <br /> seu parceiro.
       </h2>
-      <button>Solicite seu crédito</button>
+      <button onClick={handleButtonClick}>Solicite seu crédito</button>
     </ServicosBannerStyled>
   );
 }
