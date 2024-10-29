@@ -20,7 +20,7 @@ const QSQuemSomosStyled = styled.div`
       font-size: 3vw;
     }
     p {
-      font-size: 1.2vw;
+      font-size: 1.3vw;
       line-height: 30px;
     }
   }
