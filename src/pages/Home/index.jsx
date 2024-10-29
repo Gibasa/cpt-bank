@@ -3,7 +3,7 @@ import Video from "@/components/Video";
 import HomeBanner from "@/components/HomeBanner";
 import ServicosCaixas from "@/components/ServicosCaixas";
 import ServicosBanner from "@/components/ServicosBanner";
-import QSQuemSomos from "@/components/QSQuemSomos";
+import QSQuemSomos from "@/components/QSQuemsomos";
 import QSEconomize from "@/components/QSEconomize";
 // import HomeSolucoes from "@/components/HomeSolucoes";
 
