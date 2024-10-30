@@ -39,7 +39,7 @@ function QSQuemSomos() {
           Somos uma Fintech formada por equipe multidisciplinar e experiente,
           sob a liderança de José Gomes da Costa, ex-CEO do Banco do Nordeste,
           ex-diretor financeiro e de crédito, ex-membro do conselho de
-          administração do banco. Economistas e mestre em economia pela UFPE,
+          administração do banco. Economista e mestre em economia pela UFPE,
           com larga formação acadêmica (EPGE-FGV-RJ, EAESP-FGV-SP, Fundação Dom
           Cabral) e grande experiência no mercado financeiro e de crédito.
         </p>

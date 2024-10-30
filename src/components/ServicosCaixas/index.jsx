@@ -252,7 +252,7 @@ function ServicosCaixas() {
           }
         >
           <p>
-          Operações de home equity, para capital de giro com vinculação de imóveis.
+          Operações de home equity, para capital de giro, com vinculação de imóveis.
           </p>
           <button className="button-box">
             Saiba mais
