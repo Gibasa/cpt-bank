@@ -179,7 +179,7 @@ const Modal = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 1.3vw;
     padding: 30px;
-    line-height: 2vw;
+    line-height: 25px;
     border-radius: 15px;
     width: 60%;
     max-width: 700px;
