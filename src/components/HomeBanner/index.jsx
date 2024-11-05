@@ -9,6 +9,10 @@ const HomeBannerStyled = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
+  @media (max-width: 599px) {
+    height: 50vh;
+    background-size: cover;
+  }
 `;
 
 const HomeBannerTextStyled = styled.div`
@@ -51,7 +55,7 @@ const HomeBannerTextStyled = styled.div`
     h3 {
       font-size: 3.2vw;
       img {
-        width: 12vw;
+        width: 20vw;
       }
     }
   }

@@ -16,8 +16,8 @@ const VideoContainer = styled.div`
 const VideoStyled = styled.video`
   width: 100%;
 
-  @media (max-width: 599px) {
-    margin-top: 15vw;
+  @media (max-width: 699px) {
+    margin-top: 10vw;
 
   }
 
@@ -35,7 +35,7 @@ const ButtonVideoStyled = styled.button`
   padding: 10px 40px;
   font-size: 1.8vw;
   transition: background-color 0.3s, color 0.3s;
-  margin: 80px 0;
+  margin: 7vw 0;
   cursor: pointer !important;
 
   &:hover {
@@ -45,12 +45,12 @@ const ButtonVideoStyled = styled.button`
 
   @media (max-width: 599px) {
     padding: 8px 30px;
-    font-size: 3vw; /* Aumenta o tamanho da fonte em telas pequenas */
+    font-size: 3vw; 
   }
 
   @media (min-width: 600px) and (max-width: 899px) {
     padding: 9px 35px;
-    font-size: 2.5vw; /* Ajuste para telas médias */
+    font-size: 2.5vw; 
   }
 `;
 

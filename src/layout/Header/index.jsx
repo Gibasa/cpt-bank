@@ -74,6 +74,9 @@ const StyledMenuIcon = styled(MenuIcon)`
 
 const StyledToolbar = styled(Toolbar)`
   height: 120px !important;
+  @media (max-width: 600px) {
+    height: 50px !important;
+  }
 `;
 
 const LogoBox = styled(Box)``;
@@ -136,7 +139,7 @@ function Header() {
   };
 
   return (
-    <StyledAppBar position="static" isScrolled={isScrolled}>
+    <StyledAppBar position="static" isScrolled={isScrolled} >
       <Container maxWidth="xl">
         <StyledToolbar disableGutters>
           <LogoBox

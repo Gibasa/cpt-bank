@@ -74,11 +74,14 @@ const QSEconomizeStyled = styled.div`
     }
   }
   @media (max-width: 600px) {
+    background-position: center;
     h2{
       font-size: 5vw;
+      margin-top: 10vw;
     }
     .banner p{
       font-size: 3.2vw;
+      line-height: 4vw;
     }
     button {
       font-size: 3.8vw;
