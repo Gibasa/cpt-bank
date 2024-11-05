@@ -87,6 +87,9 @@ const QSEconomizeStyled = styled.div`
       font-size: 3.8vw;
       width: 27vw;      
     }
+    .br-mobile{
+      display: block;
+    }
   }
 `;
 
