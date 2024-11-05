@@ -58,7 +58,7 @@ const QSQuemSomosStyled = styled.div`
   }
 `;
 
-function QSQuemSomos() {
+function QSQuemsomos() {
   return (
     <QSQuemSomosStyled id="QSQuemSomos">
       <div className="text">
@@ -78,4 +78,4 @@ function QSQuemSomos() {
   );
 }
 
-export default QSQuemSomos;
+export default QSQuemsomos;

@@ -3,7 +3,7 @@ import Video from "@/components/Video";
 import HomeBanner from "@/components/HomeBanner";
 import ServicosCaixas from "@/components/ServicosCaixas";
 import ServicosBanner from "@/components/ServicosBanner";
-import QSQuemSomos from "@/components/QSQuemSomos";
+import QSQuemsomos from "@/components/QSQuemsomos";
 import QSEconomize from "@/components/QSEconomize";
 // import HomeSolucoes from "@/components/HomeSolucoes";
 
@@ -19,14 +19,14 @@ function Home() {
         video="video-intro.mp4"
         buttonText="Conheça nossa fintech"
         route="/"
-        section="QSQuemSomos"
+        section="QSQuemsomos"
         offsetTopNum="50"
       />
       <HomeBanner />
       {/* <HomeSolucoes /> */}
       <ServicosCaixas />
       <ServicosBanner />
-      <QSQuemSomos />
+      <QSQuemsomos />
       <QSEconomize />
     </HomeStyled>
   );
