@@ -57,7 +57,7 @@ const ButtonVideoStyled = styled.button`
 
 
 
-function Video({ video, buttonText, route, section, offsetTopNum }) {
+function Video({ video, buttonText, route, section }) {
   const navigate = useNavigate();
 
   // Função para navegar e fazer o scroll com atraso
@@ -65,9 +65,9 @@ function Video({ video, buttonText, route, section, offsetTopNum }) {
     return new Promise((resolve) => {
       navigate(route);
       setTimeout(() => {
-        const section = document.getElementById(sectionId);
+        const section = document.getElementById("QSQuemSomos");
         if (section) {
-          const offsetPosition = section.offsetTop - offsetTopNum;
+          const offsetPosition = section.offsetTop - 50;
           window.scrollTo({
             top: offsetPosition >= 0 ? offsetPosition : 0,
             behavior: "smooth",
