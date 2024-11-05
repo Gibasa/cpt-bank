@@ -132,6 +132,20 @@ const FooterTextStyled = styled.div`
       }
     }
   }
+  @media (max-width: 600px) {
+    h3{
+      font-size: 0.8rem;
+    }
+    .footerSocialContact {      
+      .footerSocial {       
+        .footerSocialIcons {
+          .footerIcon {
+            font-size: 5vw;
+          }
+        }
+      }
+    }
+  }
 `;
 
 function Footer() {

@@ -55,7 +55,8 @@ const HomeBannerTextStyled = styled.div`
     h3 {
       font-size: 3.2vw;
       img {
-        width: 20vw;
+        width: 10vw;
+        padding-left: 20px;
       }
     }
   }

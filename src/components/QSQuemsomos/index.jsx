@@ -21,7 +21,7 @@ const QSQuemSomosStyled = styled.div`
     }
     p {
       font-size: 1.3vw;
-      line-height: 30px;
+      line-height: 2vw;
     }
   }
   img {
@@ -53,6 +53,7 @@ const QSQuemSomosStyled = styled.div`
       }
       p{
         font-size: 3.2vw;
+        line-height: 3.5vw;
       }
     }
   }

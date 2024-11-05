@@ -152,6 +152,7 @@ const Box = styled.div`
 
   @media (max-width: 600px) {
     width: 80vw;
+    height: 40vw;
     p{
       font-size: 3.5vw;
     }
@@ -178,6 +179,7 @@ const Modal = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 1.3vw;
     padding: 30px;
+    line-height: 2vw;
     border-radius: 15px;
     width: 60%;
     max-width: 700px;
