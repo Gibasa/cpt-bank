@@ -3,11 +3,11 @@ import styled from "styled-components";
 const ContatoMapStyled = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 15vw;
-  height: 80vh;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.secondary};
+  padding: 5vw 5vw;
   .text {
     display: flex;
     flex-direction: column;
@@ -23,13 +23,12 @@ const ContatoMapStyled = styled.div`
       font-size: 1.2vw;
     }
   }
-
   .map {
+    width: 80vw;
     iframe {
-      width: 100%; /* Tornar o mapa responsivo */
-      height: 350px;
+      width: 100%; 
+      height: 25vw;
     }
-
     small {
       display: block;
       width: 25vw;
@@ -37,6 +36,37 @@ const ContatoMapStyled = styled.div`
       a {
         text-decoration: none;
         font-family: ${({ theme }) => theme.fonts.primary};
+      }
+    }
+  }
+  @media (max-width: 899px) {
+    flex-direction: column;
+    gap: 5vw;
+    align-items: flex-start;
+    padding: 5vw;
+    .text{
+      h2{
+        font-size: 4vw;
+      }
+      p{
+        font-size: 2.2vw;
+      }
+    }
+    .map{
+      iframe{
+        height: 30vw;
+        width: 90vw;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    
+    .text{
+      h2{
+        font-size: 5vw;
+      }
+      p{
+        font-size: 3.2vw;
       }
     }
   }

@@ -6,7 +6,7 @@ const ServicosBannerStyled = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 126.6vh;
+  height: 60.8vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,9 @@ const ServicosBannerStyled = styled.div`
     font-family: ${({ theme }) => theme.fonts.primary};
     color: ${({ theme }) => theme.colors.primary};
     font-size: 3vw;
+  }
+  .br-mobile{
+    display: none;
   }
   button {
     background-color: ${({ theme }) => theme.colors.white};
@@ -32,6 +35,35 @@ const ServicosBannerStyled = styled.div`
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.white};
     }
+  @media (max-width: 899px) {  
+    font-size: 2.8vw;
+    padding: 10px 10px;
+    width: 27vw;
+  }
+  @media (max-width: 600px) {  
+    font-size: 3.8vw;
+    width: 32vw;
+  }
+
+  }
+  @media (max-width: 899px) {  
+    h2{
+      font-size: 4vw;
+    }
+    .br-mobile{
+      display: block;
+    }
+    
+  }
+
+  @media (max-width: 600px) {  
+    h2{
+      font-size: 5vw;
+      width: 52%;
+    }
+    .br-class{
+      display: none;
+    }
   }
 `;
 
@@ -44,7 +76,7 @@ function ServicosBanner() {
   return (
     <ServicosBannerStyled>
       <h2>
-        Mais que um banco, <br /> seu parceiro.
+        Mais que <br className="br-mobile"/> um  banco, <br className="br-class" /> seu parceiro.
       </h2>
       <button onClick={handleButtonClick}>Solicite seu crédito</button>
     </ServicosBannerStyled>

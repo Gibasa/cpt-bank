@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import { useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const HomeBannerStyled = styled.div`
-  background-image: url(/images/banner.png);
+  background-image: url(/images/banner-2.png);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
   height: 100vh;
   display: flex;
-  justify-content: left;
+  justify-content: start;
   align-items: center;
 `;
 
@@ -19,9 +18,8 @@ const HomeBannerTextStyled = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.primary};
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size:3vw;
+    font-size: 3vw;
     width: 100%;
-    
   }
   h3 {
     color: ${({ theme }) => theme.colors.primary};
@@ -32,7 +30,7 @@ const HomeBannerTextStyled = styled.div`
     width: 100%;
     margin-top: 10px;
     cursor: pointer;
-    &:hover img{
+    &:hover img {
       transform: translateX(20px);
     }
     img {
@@ -40,8 +38,31 @@ const HomeBannerTextStyled = styled.div`
       padding-left: 40px;
       cursor: pointer;
       transition: transform 0.3s ease;
-      &:hover{
+      &:hover {
         transform: translateX(20px);
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    h1 {
+      font-size: 5vw;
+    }
+    h3 {
+      font-size: 3.2vw;
+      img {
+        width: 12vw;
+      }
+    }
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    h1 {
+      font-size: 4vw;
+    }
+    h3 {
+      font-size: 2.2vw;
+      img {
+        width: 10vw;
       }
     }
   }
@@ -56,7 +77,10 @@ function HomeBanner() {
   return (
     <HomeBannerStyled>
       <HomeBannerTextStyled>
-        <h1>Crédito inteligente <br/>pensado para você.</h1>
+        <h1>
+          Crédito inteligente <br />
+          pensado para você.
+        </h1>
         <h3 onClick={handleButtonClick}>
           Saiba mais <img src="/images/seta.png" alt="" />
         </h3>

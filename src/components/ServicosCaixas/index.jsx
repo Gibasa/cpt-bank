@@ -52,16 +52,45 @@ const ServicosCaixasStyled = styled.div`
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.white};
     }
+  @media (max-width: 899px) { 
+    font-size: 2.8vw;
+   }
+  @media (max-width: 600px) {  
+    font-size: 3.8vw;
+  }
+  }
+  
+  @media (max-width: 899px) {  
+    .text 
+    h2{
+      font-size: 4vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .text 
+    h2{
+      font-size: 5vw;
+    }
   }
 `;
 
 const GridContainer = styled.div`
   display: grid;
   width: 80vw;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  gap: 50px; /* Ajuste o espaçamento entre as caixas */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 50px; 
   justify-items: center;
   margin-top: 20px;
+
+  @media (max-width: 899px) {
+    width: 90vw; 
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; 
+    width: 80vw; 
+  }
 `;
 
 const Box = styled.div`
@@ -80,6 +109,8 @@ const Box = styled.div`
   padding: 40px;
   position: relative;
   transition: transform 0.3s ease-in-out;
+
+  
 
   p {
     margin: 0;
@@ -106,6 +137,26 @@ const Box = styled.div`
     &:hover {
       background-color: ${({ theme }) => theme.colors.secondary};
       color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  @media (max-width: 899px) {
+    width: 40vw;
+    p{
+      font-size: 2vw;
+    }
+    .button-box{
+      font-size: 2vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 80vw;
+    p{
+      font-size: 3.5vw;
+    }
+    .button-box{
+      font-size: 3vw;
     }
   }
 `;
@@ -145,6 +196,17 @@ const Modal = styled.div`
     color: ${({ theme }) => theme.colors.terciary};
     font-weight: bold;
     transition: color 0.3s;
+  }
+
+  @media (max-width: 899px) {
+    .modal-content{
+      font-size: 2.3vw;
+    }
+  }
+  @media (max-width: 600px) {
+    .modal-content{
+      font-size: 3.3vw;
+    }
   }
 `;
 

@@ -25,10 +25,13 @@ const StyledAppBar = styled(AppBar)`
   position: fixed !important;
   top: 0;
   z-index: 5 !important;
-  padding: 0 50px !important;
+  padding: 0 5vw !important;
   box-shadow: ${({ isScrolled }) =>
     isScrolled ? "0 4px 8px rgba(0, 0, 0, 0.1)" : "none"} !important;
   transition: background-color 0.3s, box-shadow 0.3s !important;
+  .css-hhdjsd-MuiContainer-root {
+    padding: 0 !important;
+  }
 `;
 
 const StyledButton = styled(Button)`
@@ -61,7 +64,7 @@ const StyledButton = styled(Button)`
 
 const BoxStyled = styled(Box)`
   display: flex;
-  gap: 30px;
+  gap: 2.3vw;
 `;
 
 const StyledMenuIcon = styled(MenuIcon)`
@@ -72,6 +75,8 @@ const StyledMenuIcon = styled(MenuIcon)`
 const StyledToolbar = styled(Toolbar)`
   height: 120px !important;
 `;
+
+const LogoBox = styled(Box)``;
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -87,7 +92,7 @@ function Header() {
       setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
-          const offsetPosition = section.offsetTop - 90;
+          const offsetPosition = section.offsetTop - 80;
           window.scrollTo({
             top: offsetPosition >= 0 ? offsetPosition : 0,
             behavior: "smooth",
@@ -134,12 +139,17 @@ function Header() {
     <StyledAppBar position="static" isScrolled={isScrolled}>
       <Container maxWidth="xl">
         <StyledToolbar disableGutters>
-          <Box
+          <LogoBox
             component="div"
             to="/"
             sx={{
-              height: 50,
-              display: { xs: "flex", md: "flex" },
+              height: {
+                xs: "6vw",
+                sm: "5vw",
+                md: "4vw",
+                lg: "3.5vw",
+              },
+              display: { xs: "flex", lg: "flex" },
               mr: 1,
               cursor: "pointer",
             }}
@@ -153,13 +163,14 @@ function Header() {
               alt="Logo"
               sx={{
                 height: "100%",
+                width: "auto",
               }}
             />
-          </Box>
+          </LogoBox>
 
           <Box sx={{ flexGrow: 1 }} />
 
-          <BoxStyled sx={{ display: { xs: "none", md: "flex" } }}>
+          <BoxStyled sx={{ display: { xs: "none", lg: "flex" } }}>
             {pages.map(({ title, route }) => (
               <StyledButton
                 key={title}
@@ -168,7 +179,7 @@ function Header() {
                 onClick={async () => {
                   handleCloseNavMenu();
                   if (route === "") {
-                    await handleTopClick(); // Use a nova função para o botão "Início"
+                    await handleTopClick();
                   } else if (route.startsWith("#")) {
                     await scrollToSection(route.replace("#", ""));
                   } else {
@@ -178,8 +189,9 @@ function Header() {
                 isScrolled={isScrolled}
                 isActive={
                   (location.pathname === "/" && route === "") ||
-                  (location.pathname === `/${route}`) || // Adicione esta linha
-                  (location.pathname === "/contato-e-carreira" && route === "contato-e-carreira") // Verificação específica para a página de contato
+                  location.pathname === `/${route}` ||
+                  (location.pathname === "/contato-e-carreira" &&
+                    route === "contato-e-carreira")
                 }
                 sx={{ my: 2, color: "black", display: "block" }}
               >
@@ -188,7 +200,7 @@ function Header() {
             ))}
           </BoxStyled>
 
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 0, display: { xs: "flex", lg: "none" } }}>
             <IconButton
               size="large"
               aria-label="open navigation menu"
@@ -218,9 +230,15 @@ function Header() {
               {pages.map((page) => (
                 <MenuItem
                   key={page.title}
-                  onClick={() => {
+                  onClick={async () => {
                     handleCloseNavMenu();
-                    window.location.href = `/${page.route}`;
+                    if (page.route === "") {
+                      await handleTopClick();
+                    } else if (page.route.startsWith("#")) {
+                      await scrollToSection(page.route.replace("#", ""));
+                    } else {
+                      navigate(`/${page.route}`);
+                    }
                   }}
                 >
                   <Typography sx={{ textAlign: "center" }}>

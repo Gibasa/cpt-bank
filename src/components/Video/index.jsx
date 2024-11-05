@@ -15,6 +15,16 @@ const VideoContainer = styled.div`
 
 const VideoStyled = styled.video`
   width: 100%;
+
+  @media (max-width: 599px) {
+    margin-top: 15vw;
+
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    margin-top: 10vw;
+
+  }
 `;
 
 const ButtonVideoStyled = styled.button`
@@ -27,11 +37,25 @@ const ButtonVideoStyled = styled.button`
   transition: background-color 0.3s, color 0.3s;
   margin: 80px 0;
   cursor: pointer !important;
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.primary};
   }
+
+  @media (max-width: 599px) {
+    padding: 8px 30px;
+    font-size: 3vw; /* Aumenta o tamanho da fonte em telas pequenas */
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    padding: 9px 35px;
+    font-size: 2.5vw; /* Ajuste para telas médias */
+  }
 `;
+
+
+
 
 function Video({ video, buttonText, route, section, offsetTopNum }) {
   const navigate = useNavigate();

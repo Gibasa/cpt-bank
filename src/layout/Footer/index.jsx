@@ -11,41 +11,85 @@ const FooterStyled = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 40vh;
   width: 100%;
   display: flex;
-  padding: 0 5vw;
-  align-items: flex-end;
-  gap: 90px;
+  padding: 3vw 5vw;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  @media (max-width: 899px) {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5vw 0;
+    gap: 10px;
+  }
 `;
 
-const FooterLogoStyled = styled.img`
-  width: 23vw;
-  margin: auto;
+const FooterLogoStyled = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  margin: 0 0 20px;
+  img {
+    height: 3.5vw;
+  }
+  @media (max-width: 899px) {
+    margin: 0 0 0 5vw;
+    img {
+      height: 5vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    img {
+      height: 6vw;
+    }
+  }
+
 `;
 
 const FooterTextStyled = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 30px;
-  margin: 20px 0;
-  width: 50%;
-  .footerSocial {
+  margin: 20px 0 0;
+  width: 100%;
+  flex: 1;
+  .footerSocialContact {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    .footerSocialIcons{
+    gap: 2vw;
+
+    .footerSocial {
       display: flex;
-      gap:50px;
-      .footerIcon{
-        color: ${({ theme }) => theme.colors.white};
-        font-size: 2vw;
+      flex-direction: column;
+      gap: 10px;
+      .footerSocialIcons {
+        display: flex;
+        gap: 50px;
+        .footerIcon {
+          color: ${({ theme }) => theme.colors.white};
+          font-size: 2vw;
+        }
       }
     }
   }
-  .footerAdress p{
-    width: 60%;
-    line-height: 22px;
+  .br-mobile {
+    display: none;
+  }
+  .br-pc {
+    display: none;
+  }
+  .footerAdress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      width: 100%;
+      line-height: 22px;
+    }
   }
   h3,
   p {
@@ -53,34 +97,74 @@ const FooterTextStyled = styled.div`
     color: white;
     font-weight: 200;
   }
+  @media (max-width: 899px) {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px auto 0;
+    padding: 0 0 0 5vw;
+    .footerSocialContact {
+      justify-content: center;
+      .footerSocial {
+        width: 100%;
+        .footerSocialIcons {
+          .footerIcon {
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+    .br-mobile {
+      display: block;
+    }
+    .br-pc {
+      display: none;
+    }
+    .footerAdress {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 90%;
+      h3 {
+        width: 100%;
+        display: flex;
+        text-align: left;
+      }
+    }
+  }
 `;
 
 function Footer() {
   return (
     <FooterStyled>
-      <FooterLogoStyled
-        src="/images/logo-white.png"
-        alt="white logo"
-      ></FooterLogoStyled>
+      <FooterLogoStyled>
+        {" "}
+        <img src="/images/logo-white.png" alt="white logo" />
+      </FooterLogoStyled>
       <FooterTextStyled>
-        <div className="footerSocial">
-          <h3>Siga o Copartners nas redes</h3>
-          <div className="footerSocialIcons">
-          <FontAwesomeIcon icon={faFacebook} className="footerIcon" />
-          <FontAwesomeIcon icon={faInstagram} className="footerIcon" />
-          <FontAwesomeIcon icon={faLinkedin} className="footerIcon" />
+        <div className="footerSocialContact">
+          <div className="footerSocial">
+            <h3>
+              Siga o Copartners <br className="br-mobile" /> nas redes
+            </h3>
+            <div className="footerSocialIcons">
+              <FontAwesomeIcon icon={faFacebook} className="footerIcon" />
+              <FontAwesomeIcon icon={faInstagram} className="footerIcon" />
+              <FontAwesomeIcon icon={faLinkedin} className="footerIcon" />
+            </div>
           </div>
-          
-        </div>
-        <div className="footerContact">
-          <h3>Fale com a gente</h3>
-          <p>contato@copartnersbank.com.br</p>
+          <div className="footerContact">
+            <h3>Fale com a gente</h3>
+            <h3>contato@copartnersbank.com.br</h3>
+          </div>
         </div>
         <div className="footerAdress">
-          <p>
-            Alameda Salvador, 1057, Sala 1356, Shop. Business Torre América -
-            Caminho das Arvores - Salvador, BA <br/>41.820-790
-          </p>
+          <h3>
+            Alameda Salvador, 1057, Sala 1356, Shop. Business Torre América -{" "}
+            <br className="br-mobile" />
+            Caminho das Arvores - Salvador, BA - <br className="br-pc" />
+            41.820-790
+          </h3>
         </div>
       </FooterTextStyled>
     </FooterStyled>

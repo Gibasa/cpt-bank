@@ -5,10 +5,10 @@ const QSEconomizeStyled = styled.div`
   background-image: url("/images/economize-bg.gif");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10vw 0;
   h2 {
     color: ${({ theme }) => theme.colors.terciary};
     font-family: ${({ theme }) => theme.fonts.primary};
@@ -17,7 +17,7 @@ const QSEconomizeStyled = styled.div`
     margin-bottom: 80px;
   }
   .banner {
-    width: 35%;
+    width: 35vw;
     background-color: ${({ theme }) => theme.colors.primary};
     border-radius: 0 40px 40px 0;
     margin: 40px 0 20px 0;
@@ -31,10 +31,12 @@ const QSEconomizeStyled = styled.div`
       width: 85%;
     }
   }
+  .br-mobile {
+    display: none;
+  }
 
   button {
     border: none;
-    background-color: white;
     cursor: pointer;
     width: 15vw;
     font-size: 1.8vw;
@@ -46,6 +48,41 @@ const QSEconomizeStyled = styled.div`
     &:hover {
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.white};
+    }
+  }
+  @media (max-width: 899px) {
+    h2 {
+      margin-bottom: 5vw;
+      font-size: 4vw;
+    }
+    .banner {
+      width: 60vw;
+      p {
+        font-size: 2.2vw;
+      }
+    }
+    button {
+      font-size: 2.8vw;
+      width: 22vw;
+      padding: 10px 10px;
+    }
+    .br-class {
+      display: none;
+    }
+    .br-mobile {
+      display: block;
+    }
+  }
+  @media (max-width: 600px) {
+    h2{
+      font-size: 5vw;
+    }
+    .banner p{
+      font-size: 3.2vw;
+    }
+    button {
+      font-size: 3.8vw;
+      width: 27vw;      
     }
   }
 `;
@@ -60,7 +97,9 @@ function QSEconomize() {
   return (
     <QSEconomizeStyled>
       <h2>
-        Reduzir custos financeiros <br /> é nossa prioridade
+        Reduzir custos <br className="br-mobile" /> financeiros{" "}
+        <br className="br-class" /> é <br className="br-mobile" />
+        nossa prioridade
       </h2>
 
       <div className="banner">
