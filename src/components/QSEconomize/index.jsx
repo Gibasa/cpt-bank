@@ -90,6 +90,9 @@ const QSEconomizeStyled = styled.div`
     .br-mobile{
       display: block;
     }
+    .br-class {
+      display: none;
+    }
   }
 `;
 
