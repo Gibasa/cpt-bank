@@ -23,6 +23,12 @@ const FooterStyled = styled.div`
     padding: 5vw 0;
     gap: 10px;
   }
+  .copyright{
+    color: white;
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 0.8vw;
+    margin-top: 15px;
+  }
 `;
 
 const FooterLogoStyled = styled.div`
@@ -45,7 +51,6 @@ const FooterLogoStyled = styled.div`
       height: 6vw;
     }
   }
-
 `;
 
 const FooterTextStyled = styled.div`
@@ -133,11 +138,11 @@ const FooterTextStyled = styled.div`
     }
   }
   @media (max-width: 600px) {
-    h3{
+    h3 {
       font-size: 0.8rem;
     }
-    .footerSocialContact {      
-      .footerSocial {       
+    .footerSocialContact {
+      .footerSocial {
         .footerSocialIcons {
           .footerIcon {
             font-size: 5vw;
@@ -149,6 +154,12 @@ const FooterTextStyled = styled.div`
 `;
 
 function Footer() {
+  const yearnow = () => {
+    const date = new Date();
+    const currentYear = date.getFullYear();
+    console.log(currentYear);
+    return currentYear;
+  };
   return (
     <FooterStyled>
       <FooterLogoStyled>
@@ -181,6 +192,9 @@ function Footer() {
           </h3>
         </div>
       </FooterTextStyled>
+      <div className="copyright">
+        <p>© {yearnow()} Copartners Bank. 00.000.000/0001-00</p>
+      </div>
     </FooterStyled>
   );
 }

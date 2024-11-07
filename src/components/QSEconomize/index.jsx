@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const QSEconomizeStyled = styled.div`
-  background-image: url("/images/economize-bg.gif");
+  background-image: url("/images/economize-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const ServicosBannerStyled = styled.div`
-  background-image: url("/images/servicos-banner.gif");
+  background-image: url("/images/servicos-banner.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

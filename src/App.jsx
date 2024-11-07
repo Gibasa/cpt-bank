@@ -1,30 +1,33 @@
+import React, { Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@/theme";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
-import Home from "@/pages/Home";
-import Servicos from "@/pages/Servicos";
-import QuemSomos from "@/pages/QuemSomos";
-import Contato from "@/pages/Contato";
 import GlobalStyle from "@/GlobalStyles";
 import ScrollToTop from "@/ScrollToTop";
-import Formulario from "@/pages/Formulario";
+const Home = React.lazy(() => import("@/pages/Home"));
+const Servicos = React.lazy(() => import("@/pages/Servicos"));
+const QuemSomos = React.lazy(() => import("@/pages/QuemSomos"));
+const Contato = React.lazy(() => import("@/pages/Contato"));
+const Formulario = React.lazy(() => import("@/pages/Formulario"));
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <GlobalStyle/>
-        <ScrollToTop/>
+        <GlobalStyle />
+        <ScrollToTop />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/servicos" element={<Servicos />}></Route>
-          <Route path="/quem-somos" element={<QuemSomos />}></Route>
-          <Route path="/contato-e-carreira" element={<Contato />}></Route>
-          <Route path="/formulario" element={<Formulario />}></Route>
-        </Routes>
+        <Suspense fallback={<div>Carregando...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/servicos" element={<Servicos />} />
+            <Route path="/quem-somos" element={<QuemSomos />} />
+            <Route path="/contato-e-carreira" element={<Contato />} />
+            <Route path="/formulario" element={<Formulario />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </Router>
     </ThemeProvider>
