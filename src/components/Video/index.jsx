@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-
 
 const VideoContainer = styled.div`
   display: flex;
@@ -18,12 +17,10 @@ const VideoStyled = styled.video`
 
   @media (max-width: 699px) {
     margin-top: 10vw;
-
   }
 
   @media (min-width: 600px) and (max-width: 899px) {
     margin-top: 10vw;
-
   }
 `;
 
@@ -45,17 +42,14 @@ const ButtonVideoStyled = styled.button`
 
   @media (max-width: 599px) {
     padding: 8px 30px;
-    font-size: 3vw; 
+    font-size: 3vw;
   }
 
   @media (min-width: 600px) and (max-width: 899px) {
     padding: 9px 35px;
-    font-size: 2.5vw; 
+    font-size: 2.5vw;
   }
 `;
-
-
-
 
 function Video({ video, buttonText, route, section }) {
   const navigate = useNavigate();
@@ -86,6 +80,10 @@ function Video({ video, buttonText, route, section }) {
     <VideoContainer>
       <VideoStyled muted autoPlay loop playsInline>
         <source src={`./images/${video}`} type="video/mp4" />
+        <source
+          src={`./images/${video.replace(".mp4", ".webm")}`}
+          type="video/webm"
+        />
       </VideoStyled>
       {buttonText && (
         <ButtonVideoStyled onClick={handleClick}>
