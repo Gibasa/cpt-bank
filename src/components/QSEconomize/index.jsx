@@ -15,6 +15,7 @@ const QSEconomizeStyled = styled.div`
     font-size: 3vw;
     margin-left: 5vw;
     margin-bottom: 80px;
+    white-space: pre-wrap;
   }
   .banner {
     width: 35vw;
@@ -29,6 +30,7 @@ const QSEconomizeStyled = styled.div`
       font-family: ${({ theme }) => theme.fonts.primary};
       color: ${({ theme }) => theme.colors.white};
       width: 85%;
+      white-space: pre-wrap;
     }
   }
   .br-mobile {
@@ -75,19 +77,19 @@ const QSEconomizeStyled = styled.div`
   }
   @media (max-width: 600px) {
     background-position: center;
-    h2{
+    h2 {
       font-size: 5vw;
       margin-top: 10vw;
     }
-    .banner p{
+    .banner p {
       font-size: 3.2vw;
       line-height: 4vw;
     }
     button {
       font-size: 3.8vw;
-      width: 27vw;      
+      width: 27vw;
     }
-    .br-mobile{
+    .br-mobile {
       display: block;
     }
     .br-class {
@@ -108,7 +110,8 @@ function QSEconomize() {
       <h2>
         Reduzir custos <br className="br-mobile" /> financeiros{" "}
         <br className="br-class" /> é <br className="br-mobile" />
-        nossa <br className="br-mobile" />prioridade
+        nossa <br className="br-mobile" />
+        prioridade
       </h2>
 
       <div className="banner">
