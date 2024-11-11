@@ -108,7 +108,7 @@ function QSEconomize() {
       <h2>
         Reduzir custos <br className="br-mobile" /> financeiros{" "}
         <br className="br-class" /> é <br className="br-mobile" />
-        nossa prioridade
+        nossa <br className="br-mobile" />prioridade
       </h2>
 
       <div className="banner">

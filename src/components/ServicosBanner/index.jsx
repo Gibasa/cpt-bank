@@ -76,7 +76,7 @@ function ServicosBanner() {
   return (
     <ServicosBannerStyled>
       <h2>
-        Mais que <br className="br-mobile"/> um  banco, <br className="br-class" /> seu parceiro.
+        Mais que <br className="br-mobile"/> um  banco, <br/> seu parceiro.
       </h2>
       <button onClick={handleButtonClick}>Solicite seu crédito</button>
     </ServicosBannerStyled>
