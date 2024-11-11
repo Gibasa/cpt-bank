@@ -84,7 +84,7 @@ function Video({ video, buttonText, route, section }) {
 
   return (
     <VideoContainer>
-      <VideoStyled muted autoPlay loop>
+      <VideoStyled muted autoPlay loop playsInline>
         <source src={`./images/${video}`} type="video/mp4" />
       </VideoStyled>
       {buttonText && (
