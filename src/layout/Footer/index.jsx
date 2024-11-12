@@ -30,9 +30,11 @@ const FooterStyled = styled.div`
     margin-top: 15px;
     @media (max-width: 899px) {
       font-size: 1.8vw;
+      margin-left: 5vw;
     }
     @media (max-width: 600px) {
       font-size: 2.8vw;
+      margin-left: 5vw;
     }
   }
 `;
