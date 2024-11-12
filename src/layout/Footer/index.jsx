@@ -23,11 +23,17 @@ const FooterStyled = styled.div`
     padding: 5vw 0;
     gap: 10px;
   }
-  .copyright{
+  .copyright {
     color: white;
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 0.8vw;
     margin-top: 15px;
+    @media (max-width: 899px) {
+      font-size: 1.8vw;
+    }
+    @media (max-width: 600px) {
+      font-size: 2.8vw;
+    }
   }
 `;
 
