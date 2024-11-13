@@ -7,7 +7,7 @@ const QSQuemSomosStyled = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.secondary};
   gap: 50px;
-  padding: 10vw 0;
+  padding: 10vw 0 5vw;
   .text {
     font-family: ${({ theme }) => theme.fonts.primary};
     color: ${({ theme }) => theme.colors.terciary};
@@ -39,6 +39,8 @@ const QSQuemSomosStyled = styled.div`
       }
       p {
         font-size: 2.2vw;
+      line-height: 2.5vw;
+
       }
     }
     img {

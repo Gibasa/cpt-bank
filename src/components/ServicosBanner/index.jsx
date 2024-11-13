@@ -6,7 +6,7 @@ const ServicosBannerStyled = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 60.8vw;
+  height: 60.2vw;
   width: 100%;
   display: flex;
   flex-direction: column;

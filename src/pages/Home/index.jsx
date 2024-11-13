@@ -5,6 +5,7 @@ import ServicosCaixas from "@/components/ServicosCaixas";
 import ServicosBanner from "@/components/ServicosBanner";
 import QSQuemsomos from "@/components/QSQuemsomos";
 import QSEconomize from "@/components/QSEconomize";
+import Valores from "@/components/Valores";
 // import HomeSolucoes from "@/components/HomeSolucoes";
 
 const HomeStyled = styled.section`
@@ -27,6 +28,7 @@ function Home() {
       <ServicosCaixas />
       <ServicosBanner />
       <QSQuemsomos />
+      <Valores/>
       <QSEconomize />
     </HomeStyled>
   );

@@ -20,8 +20,6 @@ const ServicosCaixasStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-
     h2,
     p {
       font-family: ${({ theme }) => theme.fonts.primary};
