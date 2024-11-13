@@ -147,7 +147,7 @@ function Header() {
             to="/"
             sx={{
               height: {
-                xs: "6vw",
+                xs: "7vw",
                 sm: "5vw",
                 md: "4vw",
                 lg: "3.5vw",

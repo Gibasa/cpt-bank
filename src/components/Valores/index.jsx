@@ -65,6 +65,7 @@ const ValoresStyled = styled.div`
     .missao,
     .visao {
       width: 80%;
+      padding: 4vw;
     }
   }
 `;
