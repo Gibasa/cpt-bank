@@ -6,7 +6,6 @@ import ServicosBanner from "@/components/ServicosBanner";
 import QSQuemsomos from "@/components/QSQuemsomos";
 import QSEconomize from "@/components/QSEconomize";
 import Valores from "@/components/Valores";
-// import HomeSolucoes from "@/components/HomeSolucoes";
 
 const HomeStyled = styled.section`
   margin-top: 120px;
@@ -24,7 +23,6 @@ function Home() {
         offsetTopNum="50"
       />
       <HomeBanner />
-      {/* <HomeSolucoes /> */}
       <ServicosCaixas />
       <ServicosBanner />
       <QSQuemsomos />
